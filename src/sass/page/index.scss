@@ -1,0 +1,549 @@
+@mixin m {
+    @media(max-width:414px) {
+        @content;
+    }
+}
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    box-sizing: border-box;
+    background-color: $apricot;
+
+    .deco {
+        display: flex;
+        background-image: url(../images/wave.png);
+        height: 110px;
+
+    }
+
+    .title {
+        background-image: url(../images/bg_title.png);
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include m {
+            background-position: 50% 50%;
+            // height: 793px;
+        }
+
+        .text {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 60px;
+
+            // justify-content: center;
+            h2 {
+                color: $white;
+                text-align: center;
+                letter-spacing: 0.2em;
+            }
+
+            h3 {
+                color: $white;
+                text-align: center;
+                font-size: 28px;
+                padding-top: 4px;
+                letter-spacing: 0.2em;
+            }
+
+        }
+
+        button {
+            margin: 32px auto;
+            box-shadow: 0px 0px 20px rgba(250, 163, 163, 0.91);
+            display: block;
+            cursor: pointer;
+
+            h5 {
+                letter-spacing: 0.2em;
+            }
+        }
+
+        .paragraph {
+            border: 2px solid $brown;
+            border-radius: 20px;
+            background-color: $lightBlue;
+            padding: 24px 16px;
+            // margin: 32px 24px 40px;
+            margin-bottom: 40px;
+
+            display: flex;
+            flex-direction: column;
+
+            gap: 24px;
+
+            position: relative;
+
+            @include m {
+                margin: 0 12px;
+            }
+
+            .boat1 {
+                position: absolute;
+                top: -75px;
+                right: 15px;
+            }
+
+            .boat2 {
+                position: absolute;
+                bottom: -50px;
+                left: 15px;
+            }
+
+
+
+            &_item {
+                h5 {
+                    color: $deepBlue;
+                    text-align: center;
+                    margin: 0 auto;
+                    position: relative;
+                    width: 92px;
+                    font-weight: 700;
+
+                    // padding-top: 24px;
+                    &::after {
+                        width: 30px;
+                        height: 40px;
+                        content: "";
+                        background-image: url(../images/cactus.png);
+                        position: absolute;
+                        top: -10px;
+                        right: 90px;
+                    }
+
+                    &::before {
+                        width: 30px;
+                        height: 40px;
+                        content: "";
+                        background-image: url(../images/cactus.png);
+                        position: absolute;
+                        top: -10px;
+                        left: 90px;
+                    }
+                }
+
+                ol {
+                    list-style: decimal;
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 16px;
+
+                    li {
+                        margin-left: 16px;
+                        color: $deepBlue;
+
+                        p {
+                            // padding-top: 16px;
+                            color: $deepBlue;
+                            font-weight: 400;
+
+                            u {
+                                font-weight: 700
+                            }
+
+                            strong {
+
+                                font-weight: 700
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+
+    }
+
+    .content {
+        background-color: $apricot;
+
+        .form {
+
+            .wrapper {
+
+                // gap: 20px;
+                padding: 80px 24px 58px;
+
+                form {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    padding: 16px 20px;
+                    gap: 8px;
+
+                    #submit {
+                        box-shadow: 0px 4px 10px rgba(40, 35, 35, 0.35), 0px -4px 10px rgba(255, 255, 255, 0.9);
+                        margin-top: 40px;
+                        cursor: pointer;
+
+                        &:hover {
+                            background-color: #D3A995;
+                        }
+                    }
+
+                    #submitError {
+                        color: #E06D6D;
+                        font-size: 14px;
+
+
+                    }
+
+                    .success {
+                        color: #E6FFB1;
+                        font-size: $h5;
+                        font-weight: 700;
+                        line-height: 125%;
+                        position: relative;
+                    }
+
+                    .success::before {
+                        content: "";
+                        width: 24px;
+                        height: 24px;
+                        background-image: url(../images/success.png);
+                        position: absolute;
+                        top: 16px;
+                        left: 30px;
+                    }
+
+                    .failure {
+                        color: #FFE3E3;
+                        font-size: $h5;
+                        font-weight: 700;
+                        line-height: 125%;
+                        position: relative;
+                    }
+
+                    .failure::before {
+                        content: "";
+                        width: 24px;
+                        height: 24px;
+                        background-image: url(../images/failure.svg);
+                        position: absolute;
+                        top: 16px;
+                        left: 30px;
+                    }
+
+                    .form__group {
+                        border: 2px solid $brown;
+                        border-radius: 20px;
+                        background-color: $white;
+                        padding: 40px 20px;
+
+
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: center;
+                        gap: 20px;
+
+                        .form__title {
+                            width: 123px;
+                            height: 43px;
+                            border-radius: 50px;
+                            border: 2px solid $brown;
+                            box-shadow: 0px 1px 10px rgba(73, 72, 72, 0.25);
+                            margin: 0 auto;
+                            margin-top: -65px;
+                            background-color: $white;
+                            position: relative;
+
+                            h5 {
+                                text-align: center;
+                                line-height: 43px;
+                                letter-spacing: 0.2em;
+                                color: $brown;
+                            }
+
+                            .turtle {
+                                position: absolute;
+                                top: -10px;
+                                right: -40px;
+                            }
+                        }
+
+                        .form__list {
+
+                            display: flex;
+                            flex-direction: column;
+                            // justify-content: center;
+                            // align-items: center;
+
+                            label {
+                                display: block;
+                                margin-bottom: 4px;
+                                align-self: baseline;
+                                color: $deepBlue;
+                            }
+
+                            input {
+                                width: 650px;
+                                height: 57px;
+                                background: $white;
+                                border: 1px solid $deepBlue;
+                                border-radius: 20px;
+                                font-size: $body;
+                                padding-left: 16px;
+                                // margin: 0 40px;
+                                outline: none;
+
+                                @include m {
+                                    width: 326px;
+                                }
+
+
+                            }
+
+                            .has-error {
+
+                                border: solid 3px #E06D6D;
+                            }
+
+                            span {
+                                color: #E06D6D;
+                                font-size: 12px;
+                                margin-top: 4px;
+                            }
+
+                            input:focus {
+                                border: solid 3px #93BBF9;
+                            }
+
+                            select {
+                                width: 670px;
+                                height: 57px;
+                                background: $white;
+                                border: 1px solid $deepBlue;
+                                border-radius: 20px;
+                                font-size: $body;
+                                padding-left: 16px;
+                                // margin: 0 40px;
+                                outline: none;
+
+
+                                appearance: none;
+                                position: relative;
+                                padding: 0px 1.4em 0px 0.8em;
+                                background-color: transparent;
+                                background-image: url(../images/drop\ down.png);
+                                background-repeat: no-repeat;
+                                background-position: right 0.7em top 50%, 0px 0px;
+
+                                @include m {
+                                    width: 340px;
+                                }
+                            }
+
+                            select:focus {
+
+                                border: solid 3px #93BBF9;
+                            }
+
+                            input::-webkit-calendar-picker-indicator {
+                                -webkit-appearance: none;
+                                opacity: 1;
+                                padding: 0px 1.4em 0px 0.8em;
+                                // background-color: transparent;
+                                // background-image: url(../images/drop\ down.png);
+                                // background-position: right 0.7em top 50%, 0px 0px;
+                                color: $deepBlue;
+
+                            }
+
+
+
+                        }
+
+                    }
+                }
+            }
+
+        }
+    }
+
+
+
+
+
+
+
+    .reward {
+        background-image: url(../images/bg_reward.svg);
+
+
+        .wrapper {
+
+            padding: 40px 24px;
+
+
+            .reward__group {
+
+
+                display: flex;
+                flex-wrap: wrap;
+                gap: 40px;
+                max-width: 614px;
+                margin: 0 auto;
+
+                @include m {
+                    gap: 40px 10px;
+
+                }
+
+
+                .reward__item {
+                    width: 178px;
+                    height: 112px;
+                    background-color: $white;
+                    box-shadow: 0px 8px 0px #EDEEF0;
+                    border-radius: 20px;
+                    position: relative;
+
+
+
+                    .certificateA {
+                        background-image: url(../images/certificateA.svg);
+                        width: 65px;
+                        height: 78px;
+                        display: block;
+                        text-align: center;
+                        line-height: 65px;
+                        color: $white;
+                        font-weight: 700;
+                        position: absolute;
+                        top: -25px;
+                        left: 50px;
+                    }
+
+                    .certificateD {
+                        background-image: url(../images/certificateD.svg);
+                        width: 65px;
+                        height: 65px;
+                        display: block;
+                        text-align: center;
+                        line-height: 65px;
+                        color: $white;
+                        font-weight: 700;
+                        position: absolute;
+                        top: -25px;
+                        left: 50px;
+                    }
+
+                    span {
+                        width: 45px;
+                        height: 23px;
+                        border: 1px solid $blue;
+                        border-radius: 50px;
+                        font-size: 12px;
+                        position: absolute;
+                        top: 18px;
+                        left: 125px;
+                        text-align: center;
+                        line-height: 23px;
+                        background-color: #fafafa;
+                        color: $blue
+                    }
+
+                    .topThree {
+                        border: 1px solid $green;
+                        color: $green;
+                    }
+
+                    h5 {
+                        position: absolute;
+                        left: 0%;
+                        right: 0%;
+                        top: 48.15%;
+                        bottom: 11.11%;
+                        text-align: center;
+                        color: $blue;
+                    }
+
+                    .topThreeText {
+                        position: absolute;
+                        left: 0%;
+                        right: 0%;
+                        top: 53.7%;
+                        bottom: 5.56%;
+                        color: $green;
+                    }
+
+
+                }
+            }
+
+
+        }
+    }
+
+    .lighthouse {
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 24px;
+            gap: 24px;
+
+            .text {
+                position: relative;
+            }
+
+            h4 {
+                text-align: center;
+                color: $deepBlue;
+            }
+
+            .text>h4:first-child {
+                color: $brown;
+            }
+
+            .text::before {
+                content: "";
+                position: absolute;
+                left: -20px;
+                top: 4px;
+                border: 0.5px solid #204379;
+                transform: rotate(160deg);
+                // transform: matrix(1, 0, 0, -1, 0, 0);
+                // width: 20px;
+                height: 77px;
+            }
+
+            .text::after {
+                content: "";
+                position: absolute;
+                right: -20px;
+                top: 4px;
+                border: 0.5px solid #204379;
+                transform: rotate(20deg);
+                height: 77px;
+            }
+        }
+    }
+
+    .store {
+        background-color: $deepBlue;
+        border-radius: 50px 50px 0px 0px;
+
+        .wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            padding: 40px 19px;
+            gap: 24px;
+
+            h4 {
+                text-align: center;
+                color: $white;
+                letter-spacing: 0.2em;
+            }
+        }
+    }
+
+}

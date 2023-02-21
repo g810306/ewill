@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="app">
+        <div class="title">
+            <div class="wrapper">
+                <div class="text">
+                    <h2>There is no one</h2>
+                    <h3>who loves pain</h3>
+                </div>
+
+                <button class="defaultBtn" onclick="ScrollTo('form')">
+                    <h5>FORM</h5>
+                </button>
+
+                <div class="paragraph">
+
+                    <img class="boat1" src="images/boat1.png" alt="">
+                    <img class="boat2" src="images/boat2.png" alt="">
+
+                    <div class="paragraph_item">
+                        <h5>paragraph</h5>
+                        <ol>
+                            <li>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            </li>
+                        </ol>
+                    </div>
+                    <div class="paragraph_item">
+                        <h5>paragraph</h5>
+                        <ol>
+                            <li>
+                                <p>Quisque sodales leo
+                                    <u>vitae vulputate auctor.</u>
+                                </p>
+                            </li>
+                            <li>
+                                <p>Proin ac justo ut nisl tincidunt imperdiet.Maecenas viverra libero a pellentesque
+                                    blandit.
+                                </p>
+                            </li>
+                            <li>
+                                <p>Cras tristique tellus id leo bibendum, eu dapibus nisl accumsan.</p>
+                            </li>
+                            <li>
+                                <p>Donec ultrices sapien <strong>vitae leo venenatis ullamcorper.</strong></p>
+                            </li>
+                        </ol>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="deco">
+
+        </div>
+        <div class="content">
+            <div class="form" id="form">
+                <div class="wrapper">
+                    <form action="" id="the_form">
+                        <div class="form__group">
+                            <div class="form__title">
+                                <h5>FORM</h5>
+                                <img class="turtle" src="images/turtle.png" alt="">
+                            </div>
+                            <div class="form__list">
+                                <label for="">store<span class="text-danger"> *</span></label>
+                                <input list="stores" name="store" id="store" autocomplete="off"
+                                    placeholder="placeholder text" />
+                                <datalist id="stores">
+                                    <option value="store1"></option>
+                                    <option value="store2"></option>
+                                    <option value="store3"></option>
+                                </datalist>
+                                <span id="storeError"></span>
+                            </div>
+                            <div class="form__list">
+                                <label for="">name<span class="text-danger"> *</span></label>
+                                <input type="text" placeholder="placeholder text" id="name">
+                                <span id="nameError"></span>
+                            </div>
+                            <div class="form__list">
+                                <label for="">phone<span class="text-danger"> *</span></label>
+                                <input type="tel" placeholder="placeholder text" maxlength="10" pattern="^09\d{8}$"
+                                    onkeyup="value=value.replace(/[^\d]/g,'') " id="phone">
+                                <span id="phoneError"></span>
+                            </div>
+                            <div class="form__list">
+                                <label for="">Amount of consumption<span class="text-danger">*</span></label>
+                                <input type="number" placeholder="placeholder text" id="amount"
+                                    onkeyup="value=value.replace(/[^\d]/g,'') " min="0">
+                                <span id="amountError"></span>
+                            </div>
+                            <div class="form__list">
+                                <label for="">payment<span class="text-danger"> *</span></label>
+                                <select name="" id="">
+                                    <option value="digital payment">digital payment</option>
+                                    <option value="ATM">ATM</option>
+                                </select>
+
+                            </div>
+
+                        </div>
+                        <button type="submit" class="defaultBtn" id="submit">
+                            <h5>submit</h5>
+                        </button>
+                        <span id="submitError"></span>
+                    </form>
+                </div>
+            </div>
+            <div class="reward">
+                <div class="wrapper">
+                    <div class="reward__group">
+                        <div class="reward__item">
+                            <div class="certificateA">A</div><span class="topThree">ONE</span>
+                            <h5 class="topThreeText">dehumidifier</h5>
+
+                        </div>
+                        <div class="reward__item">
+                            <div class="certificateA">B</div><span class="topThree">ONE</span>
+                            <h5 class="topThreeText">range hood</h5>
+                        </div>
+                        <div class="reward__item">
+                            <div class="certificateA">C</div><span class="topThree">ONE</span>
+                            <h5 class="topThreeText">vacuum cleaner</h5>
+                        </div>
+                        <div class="reward__item">
+                            <div class="certificateD">D</div><span>ONE</span>
+                            <h5>toaster</h5>
+                        </div>
+                        <div class="reward__item">
+                            <div class="certificateD">E</div><span>ONE</span>
+                            <h5>scale</h5>
+                        </div>
+                        <div class="reward__item">
+                            <div class="certificateD">F</div><span>ONE</span>
+                            <h5>straightening iron</h5>
+                        </div>
+                        <div class="reward__item">
+                            <div class="certificateD">G</div><span>ONE</span>
+                            <h5>vacuum cleaner</h5>
+                        </div>
+                        <div class="reward__item">
+                            <div class="certificateD">H</div><span>ONE</span>
+                            <h5>rice cooker</h5>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="lighthouse">
+                <div class="wrapper">
+                    <div class="text">
+                        <h4>13.32</h4>
+                        <h4>who seeks after it and<br>wants to have it</h4>
+                    </div>
+                    <img src="images/lighthouse.svg" alt="">
+
+                </div>
+            </div>
+            <div class="store">
+                <div class="wrapper">
+                    <h4>Neque porro quisquam <br>
+                        est qui dolorem!</h4>
+                    <img src="images/market.svg" alt="">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
